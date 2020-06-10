@@ -1,4 +1,5 @@
 # Write your code below game_hash
+require 'pry'
 def game_hash
   {
     home: {
@@ -127,3 +128,62 @@ def game_hash
 end
 
 # Write code here
+#knows the number of points scored by each player
+def num_points_scored(players_name)
+  game_hash.each do |team, team_details|
+    team_details[:players].each do |attribute|
+      if attribute[:player_name] == players_name 
+        return attribute[:points]
+      end
+    end
+  end
+end
+
+#that takes in an argument of a player's name and returns the shoe size for that player.
+# Think about how you will find the shoe size of the correct player. How can
+#you check and see if a player's name matches the name that has been passed
+#into the method as an argument?
+def shoe_size(player_name)
+
+end
+
+#Build a method, `team_colors`, that takes in an argument of the team name and
+#returns an `Array` of that team's colors.
+def team_colors(team_name)
+
+end 
+
+#Build a method, `team_names`, that operates on the game `Hash` to return an
+# `Array` of the team names.
+def team_names 
+
+end 
+
+#Build a method, `player_numbers`, that takes in an argument of a team name and
+#returns an `Array` of the jersey numbers for that team.
+def player_numbers(team_name)
+
+end 
+
+#Build a method, `player_stats`, that takes in an argument of a player's name
+#and returns a hash of that player's stats.
+def player_stats(player_name)
+
+end 
+#Check out the following example of the expected return value of the
+#`player_stats` method:
+=begin
+  player_stats("Alan Anderson")
+  => {
+        :player_name => "Alan Anderson",
+        :number => 0,
+        :shoe => 16,
+        :points => 22,
+        :rebounds => 12,
+        :assists => 12,
+        :steals => 3,
+        :blocks => 1,
+        :slam_dunks => 1
+      }
+=end 
+
