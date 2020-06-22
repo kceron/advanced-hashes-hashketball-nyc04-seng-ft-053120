@@ -159,14 +159,11 @@ def team_colors(teams_name)
 end 
 
 #returns an `Array` of the team names.
-def team_names 
-  team_names_array = []
-  game_hash.each do |team, team_details|
-    team_names_array << team_details[:team_name]
-    team_names_array
-  end 
-  team_names_array
-end 
+def team_names
+  game_hash.map do |team, team_details|
+    team_details[:team_name]
+  end
+end
 
 #returns an `Array` of the jersey numbers for that team.
 def player_numbers(teams_name)
@@ -207,5 +204,3 @@ def big_shoe_rebounds
     return rebounds 
   end 
 end 
-
-
